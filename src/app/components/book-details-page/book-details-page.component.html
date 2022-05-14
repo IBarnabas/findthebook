@@ -1,0 +1,26 @@
+<mat-card *ngIf="enablebook">
+    <mat-card-header >
+        <mat-card-title>{{book.title}}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-title-group>
+        <img src={{book.coversUrl[1]}} height="230" (click)="zoomCover()">
+        <mat-card-subtitle class="subtitle-title">Author:</mat-card-subtitle>
+        <mat-card-subtitle class="authorlink" *ngFor="let author of book.authors" routerLink="/author/{{author.key}}" routerLinkActive="active">
+            {{author.name}}
+        </mat-card-subtitle>
+        <mat-card-subtitle class="subtitle-title">Object:</mat-card-subtitle>
+        <mat-card-subtitle>{{book.subject[0]}}</mat-card-subtitle>
+        <mat-card-subtitle class="subtitle-title">First publish year:</mat-card-subtitle>
+        <mat-card-subtitle>{{book.first_publish_year}}</mat-card-subtitle>
+        <mat-card-subtitle class="subtitle-title">Number of pages:</mat-card-subtitle>
+        <mat-card-subtitle>{{pageNumber}}</mat-card-subtitle>
+
+    </mat-card-title-group>
+    <mat-card-content>
+        <p>{{description}}</p>
+    </mat-card-content>
+</mat-card>
+<div class="action-button">
+    <button mat-stroked-button [routerLink]='"/findbook"'>New Search</button>
+</div>

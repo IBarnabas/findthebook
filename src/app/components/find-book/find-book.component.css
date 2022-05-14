@@ -1,0 +1,52 @@
+.panel-body{
+  text-align:center;
+}
+
+mat-spinner{
+  margin: 0 auto;
+}
+
+mat-grid-tile{
+    background: lightgray;
+}
+
+mat-grid-tile:hover{
+  background: grey;
+  cursor: pointer;
+}
+
+
+mat-form-field, button{
+  margin-right: 5px;
+  margin-left: 5px;  
+}
+
+button{
+  margin-bottom: 25px;
+}
+
+mat-list{
+  align-items: center;
+}
+
+mat-list-item .title{
+  font-weight: bold;
+  font-size: small;
+  margin-bottom: 2px;
+  
+}
+
+mat-list-item .title_value{
+  padding-top: 5px;
+  font-size: medium;
+}
+
+mat-grid-list {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.pageNumberSelector{
+  width: 115px;
+}

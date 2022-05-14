@@ -1,0 +1,18 @@
+<mat-card *ngIf="enableauthor">
+    <mat-card-header>
+        <mat-card-title>{{author.name}}</mat-card-title>
+        <mat-card-subtitle>Birthdate: {{author.birth_date}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="imgViewer">
+        <img src="{{author.coversUrl[currentIMG]}}" height="250" (click)="zoomPhoto()">
+    </div>
+    <mat-card-actions  *ngIf="enablePagingButton">
+        <button mat-button [disabled]="currentIMG <= 0" (click)="currentIMG=currentIMG-1" >prev</button>
+        <button mat-button [disabled]="currentIMG >= imgNumbers-1" (click)="currentIMG=currentIMG+1" >next</button>
+      </mat-card-actions>
+    <mat-card-content>{{author.bio}}</mat-card-content>
+</mat-card>
+<div class="action-button">
+    <button mat-stroked-button (click)="back()" *ngIf="enableauthor">Back to the book</button>
+    <button mat-stroked-button [routerLink]='"/findbook"'>New Search</button>
+</div>

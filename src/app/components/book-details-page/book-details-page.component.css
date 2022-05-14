@@ -1,0 +1,34 @@
+mat-card{
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: lightgray;
+}
+
+mat-card-title{
+    font-weight: bold;
+}
+
+button{
+    text-align: center;
+      
+}
+
+.authorlink:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+mat-card-title-group img:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.subtitle-title{
+    font-weight: bold;
+}
+
+.action-button{
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}

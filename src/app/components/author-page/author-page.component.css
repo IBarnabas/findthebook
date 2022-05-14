@@ -1,0 +1,29 @@
+mat-card{
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: lightgray;
+}
+
+mat-card-actions{
+    text-align: center;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.imgViewer{
+    text-align: center;
+}
+
+.imgViewer img:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.action-button{
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}

@@ -1,0 +1,55 @@
+<div class="panel-body">
+    <div>
+        <div class="formfield">
+            <form >
+                <mat-form-field appearance="outline">
+                    <mat-label>Title: </mat-label>
+                    <input matInput id="title" type="text" [formControl]="title" (keydown.enter)="findBook()">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Author: </mat-label>
+                    <input matInput id="author" type="text" [formControl]="author" (keydown.enter)="findBook()">
+                </mat-form-field> 
+                <mat-form-field appearance="outline">
+                    <mat-label>Subject: </mat-label>
+                    <input matInput id="subject" type="text" [formControl]="subject" (keydown.enter)="findBook()">
+                </mat-form-field>  
+            </form>
+            
+            <mat-form-field class="pageNumberSelector">
+            <mat-label>Max number of results:</mat-label>
+            <mat-select [(value)]="limit">
+                <mat-option value="5">5</mat-option>
+                <mat-option value="10">10</mat-option>
+                <mat-option value="50">50</mat-option>
+                <mat-option value="100">100</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <button mat-stroked-button (click)="findBook()">Search</button>            
+            <button *ngIf="isClear" mat-stroked-button (click)="clearResults()">Clear Result</button>
+        </div>
+
+        <mat-spinner *ngIf="loading"></mat-spinner>
+
+        <mat-label *ngIf="resultFind">Not found</mat-label>
+        
+        
+        <mat-grid-list cols="4" rowHeight="425px" gutterSize="5px">
+            <mat-grid-tile *ngFor="let book of books" (click)="openBook(book)">
+                <div>
+                    <img src={{book.coversUrl[1]}} height="230">
+                    <mat-list>
+                        <mat-list-item>
+                            <p class="title" matLine>Title:</p>
+                            <p class="title_value" matLine>{{book.title}}</p>
+                        </mat-list-item>
+                        <mat-list-item>                 
+                            <p class="title" matLine>Author:</p>
+                            <p matLine>{{book.author_name[0]}}</p>
+                        </mat-list-item>                                 
+                    </mat-list>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

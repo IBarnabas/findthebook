@@ -1,0 +1,16 @@
+/* Application-wide Styles */
+h1 {
+    color: rgb(47, 43, 43);
+    font-size: 250%;
+    font-weight: bold;
+  }
+
+.title{
+  text-align: center;
+  margin-top: 20px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
